@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<link rel="stylesheet" href="Task.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Container(para){
+
+            return (
+                <div id="my-container">
+                    <h1>{para.title}</h1>
+                    <p>{para.description}</p>
+                </div>
+            );
+
+
+        }
+
+        function App(){
+            return (
+                <div>
+                    <Container title="JavaScript" description="JavaScript is a programming language that is commonly used in web development." />
+                    <Container title="HTML" description="HTML (HyperText Markup Language) is the standard markup language for creating web pages." />
+                    <Container title="TypeScript" description="TypeScript is a superset of JavaScript that adds static types." />
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<!-- container styles -->
+ <link rel="stylesheet" href="Components/Task.css">
+</head>
+<body>
+    <div id="root"></div>
+     <script type="text/babel">
+
+    function container(title){
+        return (
+            <div id="container">
+                <h2>{title}</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem consectetur excepturi dolore, molestias aliquam voluptatibus iste vero assumenda laboriosam enim omnis tempore adipisci perspiciatis? Voluptates omnis at ipsam voluptatem totam vel natus, atque illo. Nobis voluptatibus, qui in, velit perferendis, quis sint dolorum nulla eaque magnam ex tempora sit dicta.</p>
+        </div>
+        );
+
+    }
+    function app() {
+        return (
+            <div>
+                {container("JavaScript")}
+                {container("HTML")}
+                {container("TypeScript")}
+            </div>
+        )
+
+    }
+        ReactDOM.render(app(), document.getElementById('root'));
+    </script>
+    
+</body>
+</html>

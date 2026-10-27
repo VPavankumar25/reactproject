@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<style>
+    .app {
+        display: flex;
+        justify-content: space-evenly;
+         width: 90%;
+        margin: 30px auto;
+    }
+    .show-image{
+         margin: 20px auto;
+        text-align: center;
+    }
+    .card {
+        width: 270px;
+        padding: 10px;
+
+        box-shadow: 0 0 10px black;
+      }
+    
+   
+</style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function CreateUI(param){
+            return (<div>
+                <img src={param.image} height="50" width="50" alt=""/>
+                <h3>{param.description}</h3>
+            </div>);
+        }
+
+        function ShowImage(param){
+            return (
+               <div className="show-image">
+                <img src={param.image} height="70%" width="90%" alt=""/>
+               </div>
+            );
+        }
+
+        function CreateCard(param){
+            return (
+                <div className="card">
+                    <img src={param.image} height="230" width="100%" alt=""/>
+                    <p>{param.title}</p>
+                    <h4>{param.offer}</h4>
+                </div>
+            );
+        }
+
+        function App(){
+            return (
+                <div>
+                <div className="app">
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/all.svg" description="For You"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/fashion.svg" description="Fashion"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/mobiles.svg" description="Mobiles"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/electronics.svg" description="Electronics"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/beauty.svg" description="Beauty"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/tv.svg" description="Appliances"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/all.svg" description="For You"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/fashion.svg" description="Fashion"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/mobiles.svg" description="Mobiles"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/electronics.svg" description="Electronics"/>
+                <CreateUI image="https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/beauty.svg" description="Beauty"/>
+                <CreateUI image={"https://static-assets-web.flixcart.com/apex-static/images/svgs/L1Nav/tv.svg"} description="Appliances"/>
+
+                </div>
+              
+                
+                <ShowImage image={"https://rukminim2.flixcart.com/fk-p-flap/3140/700/image/3af3a502af5cc7fa.png?q=60"} />
+
+                <div className="card-container">
+                    <CreateCard image={"https://rukminim2.flixcart.com/fk-p-flap/1000/1340/image/480x640-bengdq-1790749385861.png"} title="Up to 70% Off | Electronics Clearance Sale" offer="From ₹99"/>
+                </div>
+            </div>
+        );
+    }
+    ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    
+</body>
+</html>
